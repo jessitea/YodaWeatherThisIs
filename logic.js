@@ -63,7 +63,7 @@ function local() {
 
 
     $.ajax({
-        url: "http://dataservice.accuweather.com/locations/v1/postalcodes/search?apikey=cEXLg1f8FSe8se6GUurGnlmIVmuXmaWy&" + locationParameters,
+        url: "https://dataservice.accuweather.com/locations/v1/postalcodes/search?apikey=cEXLg1f8FSe8se6GUurGnlmIVmuXmaWy&" + locationParameters,
         method: "GET",
     }).done(function(res) {
         // console.log(res);
@@ -107,7 +107,7 @@ function local() {
 function forecast() {
 
     $.ajax({
-        url: "http://dataservice.accuweather.com/forecasts/v1/daily/1day/" + locationKey + "?apikey=cEXLg1f8FSe8se6GUurGnlmIVmuXmaWy&details=true",
+        url: "https://dataservice.accuweather.com/forecasts/v1/daily/1day/" + locationKey + "?apikey=cEXLg1f8FSe8se6GUurGnlmIVmuXmaWy&details=true",
         method: "GET"
     }).done(function(results) {
         // console.log('Long Phrase' + results.DailyForecasts[0].Day.LongPhrase);
@@ -132,7 +132,7 @@ function forecast() {
 function current() {
 
     $.ajax({
-        url: "http://dataservice.accuweather.com/currentconditions/v1/" + locationKey + "?apikey=cEXLg1f8FSe8se6GUurGnlmIVmuXmaWy&details=true",
+        url: "https://dataservice.accuweather.com/currentconditions/v1/" + locationKey + "?apikey=cEXLg1f8FSe8se6GUurGnlmIVmuXmaWy&details=true",
         method: "GET"
     }).done(function(results) {
 
@@ -178,7 +178,7 @@ function yoda() {
 
             //start of conditional statments to display appropriate weather suggestions
             if (res.toLowerCase().search("cold") != -1 || currentTemp > "50" && currentTemp <= "69") {
-                var queryURL = "http://api.walmartlabs.com/v1/search?apiKey=f22q84qndgwhpaybz9vbwuez&query=550550283"
+                var queryURL = "https://api.walmartlabs.com/v1/search?apiKey=f22q84qndgwhpaybz9vbwuez&query=550550283"
                 $.ajax({
                     url: queryURL,
                     method: "GET"
@@ -194,7 +194,7 @@ function yoda() {
             }
             //api call for umbrella 
             if (res.toLowerCase().search("rain") != -1 || res.toLowerCase().search("shower") != -1) {
-                var queryURL = "http://api.walmartlabs.com/v1/search?apiKey=f22q84qndgwhpaybz9vbwuez&query=907920686"
+                var queryURL = "https://api.walmartlabs.com/v1/search?apiKey=f22q84qndgwhpaybz9vbwuez&query=907920686"
                 $.ajax({
                     url: queryURL,
                     method: "GET"
@@ -210,7 +210,7 @@ function yoda() {
             }
             //api call for sunscreen 
             if (res.toLowerCase().search("hot") != -1 || res.toLowerCase().search("sun") != -1 && currentTemp > "80") {
-                var queryURL = "http://api.walmartlabs.com/v1/search?apiKey=f22q84qndgwhpaybz9vbwuez&query=51023409"
+                var queryURL = "https://api.walmartlabs.com/v1/search?apiKey=f22q84qndgwhpaybz9vbwuez&query=51023409"
                 $.ajax({
                     url: queryURL,
                     method: "GET"
@@ -228,7 +228,7 @@ function yoda() {
 
             //api call for heavy jacket
             if (currentTemp < "50") {
-                var queryURL = "http://api.walmartlabs.com/v1/search?apiKey=f22q84qndgwhpaybz9vbwuez&query=172428887"
+                var queryURL = "https://api.walmartlabs.com/v1/search?apiKey=f22q84qndgwhpaybz9vbwuez&query=172428887"
                 $.ajax({
                     url: queryURL,
                     method: "GET"
@@ -246,7 +246,7 @@ function yoda() {
 
             //api call for t-shirt
             if (res.toLowerCase().search("cool") != -1 || currentTemp > "70" && currentTemp < "80") {
-                var queryURL = "http://api.walmartlabs.com/v1/search?apiKey=f22q84qndgwhpaybz9vbwuez&query=122586015"
+                var queryURL = "https://api.walmartlabs.com/v1/search?apiKey=f22q84qndgwhpaybz9vbwuez&query=122586015"
                 $.ajax({
                     url: queryURL,
                     method: "GET"
